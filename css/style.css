@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: calc(100vw - 40vw);
+  height: calc(100vh - 30vh);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.piechart {
+  width: 300px;
+  height: 300px;
+  /* radial-gradient(cicle closet-side , transparent 100%); */
+  background: radial-gradient(circle closest-side, transparent 100%, #fff 0),
+    conic-gradient(
+      from 180deg,
+      #e74c3c 0,
+      #e74c3c 30%,
+      #2980b9 0,
+      #2980b9 60%,
+      #f39c12 0,
+      #f39c12 80%,
+      #1abc9c 0,
+      #1abc9c 91%,
+      #2ecc71 0,
+      #2ecc71 100%
+    );
+}
+.details {
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  text-align: right;
+}
+.details p {
+  margin: 5px 0 0 0;
+}
+.details p::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  right: -20px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+.details p:nth-child(1)::before {
+  background-color: #e74c3c;
+}
+.details p:nth-child(2)::before {
+  background-color: #2980b9;
+}
+.details p:nth-child(3)::before {
+  background-color: #f39c12;
+}
+.details p:nth-child(4)::before {
+  background-color: #1abc9c;
+}
+.details p:nth-child(5)::before {
+  background-color: #2ecc71;
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    width: calc(100vw - 10vw);
+    height: calc(100vh - 5vh);
+  }
+  .piechart {
+    width: 250px;
+    height: 250px;
+  }
+  .details p {
+    margin: 0;
+  }
+}
